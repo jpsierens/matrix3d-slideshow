@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>CSS Matrix3D</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+	<link rel="stylesheet" href="stylesheets/view.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	<script src="js/modernizr.custom.js"></script>
+
+</head>
+<body>
+
+	<div id="wrap" class="wrap">
+		<div class="mockup">
+			<img class="mockup_img" src="images/background.jpg">
+			<div id="mobile" class="mobile">
+				<ul id="slideshow" class="slideshow">
+					<li class="slideshow__item current"><img src="images/mario-1.jpg"></li>
+					<li class="slideshow__item"><img src="images/super-mario-bros-abstract.png"></li>
+					<!-- <li class="slideshow__item"><img src="img/small/3.png"></li>
+					<li class="slideshow__item"><img src="img/small/4.png"></li> -->
+				</ul>
+			</div>
+		</div>
+		<header class="header">
+			<h1><span>Super</span> Mario <i> Triple jumping, wall hopping, dashing, diving and stomping all over you </i></h1>
+		</header>
+	</div>
+
+
+	<div class="container">
+		<section class="row">
+			<div class="sixteen columns">
+				<h1 class="remove-bottom" style="margin-top: 40px">Lorem ipsum</h1>
+				<h5>dolor sit amet</h5>
+				<hr />
+			</div>
+			<div class="one-third column">
+				<h3> Pellentesque sed fermentum metus</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p> Pellentesque sed fermentum metus, vel ornare lacus. Donec tempus ultrices massa, porttitor dignissim risus vulputate sed. Fusce congue justo metus, non maximus urna bibendum eget. Mauris lobortis, magna sit amet pulvinar sagittis, ante odio auctor ante, nec ultricies elit erat vitae erat. Maecenas blandit consequat nibh ut luctus. Aenean eget eleifend justo. Phasellus vel lectus vel est finibus tristique tincidunt quis nunc.</p>
+			</div>
+			<div class="one-third column">
+				<h3>Cras at ex eget libero</h3>
+				<p>Maecenas faucibus consectetur quam luctus posuere:</p>
+				<ul class="square">
+					<li><strong>Etiam dignissim facilisis laoreet</strong>: . Suspendisse vel sollicitudin est. Integer et lacinia massa. Nunc facilisis finibus tellus non laoreet</li>
+					<li><strong>Cras sagittis turpis nisi.</strong>: Duis pharetra felis nec est sollicitudin tempor.</li>
+					<li><strong> Suspendisse condimentum est nec nisi maximus</strong>: et ultricies lacus tincidunt. Nunc quis est nisi.</li>
+				</ul>
+			</div>
+			<div class="one-third column">
+				<h3>Sed rutrum</h3>
+				<p><a href="#">Praesent odio eros</a>, semper interdum ante sed, rhoncus ornare elit. Cras tristique lacus quis massa ultricies, vitae elementum nunc malesuada. Quisque urna ipsum, bibendum a ante eget, aliquam imperdiet orci.</p>
+				<p>Donec blandit commodo viverra. <a href="#">Sed rutrum odio mi </a>, eu vestibulum dui tempus vel. Vivamus nec lacinia odio, ut vulputate risus. Suspendisse condimentum placerat sollicitudin. Aenean rutrum mi nec lectus porta varius et ut purus. Donec cursus facilisis augue</p>
+			</div>
+		</section>
+
+	</div><!-- container -->
+	
+	<!-- scripts -->
+	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	 <script src="js/classie.js"></script>
+	 <script src="js/main.js"></script>
+	 <script>
+	 	(function() {
+				new Slideshow( document.getElementById( 'slideshow' ) );
+
+				/* Mockup responsiveness */
+				var body = docElem = window.document.documentElement,
+					wrap = document.getElementById( 'wrap' ),
+					mockup = wrap.querySelector( '.mockup' ),
+					$h1 = $('.header h1');
+					mockupWidth = mockup.offsetWidth;
+
+				scaleMockup();
+
+				function scaleMockup() {
+					var wrapWidth = wrap.offsetWidth,
+						val = wrapWidth / mockupWidth;
+
+					mockup.style.transform = 'scale3d(' + val + ', ' + val + ', 1)';
+				}
+				
+				window.addEventListener( 'resize', resizeHandler );
+
+				function resizeHandler() {
+					function delayed() {
+						resize();
+						resizeTimeout = null;
+					}
+					if ( typeof resizeTimeout != 'undefined' ) {
+						clearTimeout( resizeTimeout );
+					}
+					resizeTimeout = setTimeout( delayed, 50 );
+				}
+
+				function resize() {
+					scaleMockup();
+				}
+			})();
+	 </script>
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
